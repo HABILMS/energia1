@@ -1,0 +1,43 @@
+A logica de calculo para o simulador solar se baseia em uma sequencia de sete passos que transformam o consumo mensal do usuario na especificacao completa do sistema fotovoltaico.
+
+    Calcular a Energia Diaria Necessaria:
+
+        Formula: Energia Diaria = Consumo Mensal / 30
+
+        Proposito: Converter o consumo mensal de energia (em kWh) para a media diaria que o sistema precisa gerar.
+
+    Calcular a Potencia Ideal do Sistema (kWp):
+
+        Formula: Potencia Ideal (kWp) = Energia Diaria / (Irradiacao Solar * (Eficiencia / 100))
+
+        Proposito: Determinar a potencia de pico teorica que o sistema precisa ter, considerando a energia solar disponivel no local e as perdas de eficiencia.
+
+    Converter a Potencia para Watts (W):
+
+        Formula: Potencia em Watts = Potencia Ideal (kWp) * 1000
+
+        Proposito: Mudar a unidade de quilowatt-pico (kWp) para watts (W) para facilitar o calculo do numero de modulos.
+
+    Calcular o Numero de Modulos Solares:
+
+        Formula: Numero de Modulos = ArredondarParaCima(Potencia em Watts / Potencia por Modulo)
+
+        Proposito: Descobrir quantos paineis solares sao necessarios. O resultado e sempre arredondado para cima (Math.ceil), pois nao e possivel instalar uma fracao de painel.
+
+    Calcular a Potencia Real do Sistema (kWp):
+
+        Formula: Potencia Real (kWp) = (Numero de Modulos * Potencia por Modulo) / 1000
+
+        Proposito: Recalcular a potencia final do sistema com base no numero inteiro de paineis que serao realmente instalados. Este valor sera ligeiramente maior que a potencia ideal.
+
+    Estimar a Geracao Mensal Real:
+
+        Formula: Geracao Mensal = Potencia Real (kWp) * Irradiacao Solar * 30 * (Eficiencia / 100)
+
+        Proposito: Verificar quanta energia (em kWh) o sistema dimensionado provavelmente ira gerar por mes, confirmando se atende ou supera o consumo inicial.
+
+    Calcular a Area Minima de Instalacao:
+
+        Formula: Area Minima (m?) = Numero de Modulos * 2.7
+
+        Proposito: Estimar o espaco fisico necessario no telhado, assumindo uma area padrao de 2,7 m? por modulo.
