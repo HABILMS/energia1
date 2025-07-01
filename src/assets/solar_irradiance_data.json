@@ -1,0 +1,42 @@
+{
+  "estados": [
+    {
+      "sigla": "MS",
+      "nome": "Mato Grosso do Sul",
+      "cidades": [
+        {
+          "nome": "Campo Grande",
+          "hsp": 5.34
+        },
+        {
+          "nome": "Dourados",
+          "hsp": 5.20
+        }
+      ]
+    },
+    {
+      "sigla": "SP",
+      "nome": "São Paulo",
+      "cidades": [
+        {
+          "nome": "São Paulo",
+          "hsp": 4.50
+        },
+        {
+          "nome": "Campinas",
+          "hsp": 4.65
+        }
+      ]
+    },
+    {
+      "sigla": "RJ",
+      "nome": "Rio de Janeiro",
+      "cidades": [
+        {
+          "nome": "Rio de Janeiro",
+          "hsp": 4.70
+        }
+      ]
+    }
+  ]
+}
